@@ -318,8 +318,8 @@
         border:1px solid rgba(255,255,255,.13);
         box-shadow:0 34px 90px rgba(0,0,0,.6);overflow:hidden;background:#000;
       }
-      .proj-frame .pv{transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.22,1,.36,1);transform:translateY(0)}
-      .proj-frame .pv.off{opacity:0;pointer-events:none;transform:translateY(64px) scale(1.03)}
+      .proj-frame .pv{transition:opacity 1.6s ease,transform 1.6s cubic-bezier(.22,1,.36,1);transform:translateY(0)}
+      .proj-frame .pv.off{opacity:0;pointer-events:none;transform:translateY(96px) scale(1.04)}
       .custom-cursor{
         position:absolute;width:74px;height:74px;border-radius:50%;background:#0a0a0a;color:#fff;z-index:9;
         display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
@@ -418,7 +418,7 @@
       .acc-grid-work p b{display:block;margin:0 0 7px;font-size:16.5px;line-height:1.3}
 
       /* ---------- Second statement (white) ---------- */
-      .statement{background:var(--white);color:var(--black);position:relative;z-index:2;padding:clamp(90px,13vh,150px) clamp(18px,3.4vw,54px) 44px}
+      .statement{background:var(--white);color:var(--black);position:relative;z-index:2;padding:clamp(90px,13vh,150px) clamp(18px,3.4vw,54px) 0}
       .statement .label{color:#8a8a86}
       .statement-head{text-align:center;margin-bottom:clamp(42px,6vh,66px)}
       .statement .serif-caps{font-size:15px;margin-top:16px;color:#3c3c3a}
@@ -428,7 +428,7 @@
       }
       .statement h2 .stmt-line{display:inline-block;width:84px;height:1px;background:#0a0a0a;vertical-align:middle;margin:0 .35em}
       .statement h2 .stmt-mark{font-family:var(--sans);font-size:.42em;font-weight:600;letter-spacing:.06em;vertical-align:middle;white-space:nowrap}
-      .statement-grid{display:grid;grid-template-columns:61% 39%;gap:0;align-items:start}
+      .statement-grid{display:grid;grid-template-columns:61% 39%;gap:0;align-items:stretch}
       .statement-col{display:flex;flex-direction:column}
       .statement .foot-note{font-size:15.5px;color:#0a0a0a;font-weight:500;line-height:1.7;max-width:36em;opacity:1}
       .statement-list{margin-top:38px;border-bottom:1px solid var(--line-dark)}
@@ -436,14 +436,14 @@
         display:flex;align-items:baseline;gap:16px;padding:19px 2px;
         border-top:1px solid var(--line-dark);font-size:14.5px;
       }
-      .statement-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(36px,5vh,54px)}
+      .statement-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:0}
       .statement-strip figure{position:relative;height:clamp(180px,26vh,260px);overflow:hidden;background:#181512}
       .statement-strip img{width:100%;height:100%;object-fit:cover}
       .statement-strip figcaption{position:absolute;left:12px;bottom:10px;color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.65)}
       .statement-list .sl-num{color:#8a8a86;font-weight:600;font-size:13px;flex:none}
       .statement-list .sl-name{font-weight:600}
       .statement-list .sl-type{margin-left:auto;color:#8a8a86;font-size:13px;text-align:right}
-      .statement-photo{position:relative;height:100%;min-height:560px;margin-left:clamp(16px,3vw,50px);box-shadow:0 26px 60px rgba(0,0,0,.18);overflow:hidden;background:#181512}
+      .statement-photo{position:relative;height:auto;min-height:0;margin-left:clamp(16px,3vw,50px);box-shadow:0 26px 60px rgba(0,0,0,.18);overflow:hidden;background:#181512}
       .float-preview{position:fixed;width:250px;height:320px;z-index:80;pointer-events:none;overflow:hidden;opacity:0;transform:scale(.96);transition:opacity .25s ease,transform .25s ease;box-shadow:0 24px 60px rgba(0,0,0,.35);background:#111}
       .float-preview.on{opacity:1;transform:scale(1)}
       .float-preview img{width:100%;height:100%;object-fit:cover}
@@ -473,7 +473,7 @@
       .statement-photo-link{position:absolute;inset:0;z-index:5}
 
       /* ---------- Project cards over dark background ---------- */
-      .cards-sec{position:relative;z-index:2;padding:44px clamp(18px,3.4vw,54px) clamp(90px,12vh,140px);overflow:hidden}
+      .cards-sec{position:relative;z-index:2;padding:0 clamp(18px,3.4vw,54px) clamp(90px,12vh,140px);overflow:hidden}
       .cards-bg{position:absolute;inset:0}
       .cards-bg img.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
       .cards-bg::after{content:"";position:absolute;inset:0;background:rgba(8,6,4,.55)}
@@ -492,8 +492,10 @@
       .pcard:nth-child(even){transform:translateY(46px)}
       .pcard .pc-num{font-size:13px;font-weight:600;letter-spacing:.08em;color:#8a8a86}
       .pcard .pc-viz{position:relative;width:52%;margin-left:auto;aspect-ratio:3/3.6;margin-top:18px;margin-bottom:22px;overflow:hidden;flex:none;background:#181512}
-      .pcard .pc-viz .pv-img{filter:brightness(.15) saturate(.5);transition:filter 2.4s ease .15s}
+      .pcard .pc-viz .pv-img{filter:brightness(.04) saturate(.25);transition:filter 2s ease}
+      .pcard .pc-viz::after{content:"";position:absolute;inset:0;background:#050505;opacity:.96;transition:opacity 2s ease;pointer-events:none;z-index:3}
       .pcard.in .pc-viz .pv-img{filter:brightness(1) saturate(1)}
+      .pcard.in .pc-viz::after{opacity:0}
       .pcard .pc-type{text-transform:uppercase;font-size:11.5px;letter-spacing:.18em;color:#8a8a86;font-weight:600;margin-top:auto}
       .pcard h3{font-family:var(--serif);font-size:clamp(22px,1.85vw,28px);font-weight:500;letter-spacing:.02em;text-transform:uppercase;line-height:1.18;margin-top:8px}
       .pcard .pc-arrow{position:absolute;right:22px;bottom:18px;font-size:30px;font-weight:200;line-height:1;transform:scaleX(1.9);transform-origin:right center}
@@ -578,13 +580,11 @@
         html{scroll-behavior:auto}
         .line-inner{transform:none;transition:none}
         .page-trans{display:none}
-        .pcard .pc-viz .pv-img{filter:none;transition:none}
         .rv{opacity:1;transform:none;transition:none}
         .menu{transition:none}
         .acc-body{transition:none}
         .topbar{transition:none}
         .statement-photo .sp-img{transition:none}
-        .proj-frame .pv{transition:none}
       }
     </style>
   </head>
@@ -1001,6 +1001,8 @@
             btn.setAttribute("role", "tab");
             btn.innerHTML = '<span class="pi-num">N.' + p.n + '</span><span class="pi-name">' + p.list + "</span>";
             btn.addEventListener("click", function(){
+              track._lockIdx = i;
+              track._lockUntil = Date.now() + 2600;
               var rect = track.getBoundingClientRect();
               var total = track.offsetHeight - window.innerHeight;
               var target = window.scrollY + rect.top + (total * ((i + 0.5) / PROJECTS.length));
@@ -1072,7 +1074,8 @@
             if(total <= 0) return;
             var progress = Math.min(1, Math.max(0, -rect.top / total));
             var idx = Math.min(PROJECTS.length - 1, Math.floor(progress * PROJECTS.length));
-            inst.setActive(idx);
+            var lockActive = inst.track._lockUntil && Date.now() < inst.track._lockUntil && idx !== inst.track._lockIdx;
+            if(!lockActive) inst.setActive(idx);
             var frac = (progress * PROJECTS.length) - idx;
             var bg = inst.track.querySelector("[data-proj-bg]");
             if(bg) bg.style.transform = "scale(1.18) translateY(" + ((frac - 0.5) * -22) + "px)";
@@ -1245,8 +1248,8 @@
         document.querySelectorAll(".rv").forEach(function(el){ if(el.classList.contains("pcard")) return; if(io){ io.observe(el); } else { el.classList.add("in"); } });
         var cardIO = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries){
           entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); cardIO.unobserve(en.target); } });
-        }, { threshold: 0.3, rootMargin: "0px 0px -5% 0px" }) : null;
-        document.querySelectorAll(".pcard").forEach(function(el){ if(cardIO && !reduceMotion){ cardIO.observe(el); } else { el.classList.add("in"); } });
+        }, { threshold: 0.15, rootMargin: "0px 0px -12% 0px" }) : null;
+        document.querySelectorAll(".pcard").forEach(function(el){ if(cardIO){ cardIO.observe(el); } else { el.classList.add("in"); } });
 
         /* ---------- Loader ---------- */
         var loader = document.getElementById("loader");
